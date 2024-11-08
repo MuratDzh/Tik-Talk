@@ -1,2 +1,12 @@
-<h2>ftgkh</h2>
-<h3>{{title}}</h3>
+<div class="container-wrapper">
+    <div class="profile-card__wrapper">
+        
+         @for (profile of (profiles | async); track profile.firstName) {
+            <app-profile-card [profile]="profile"></app-profile-card>
+        } 
+        
+        
+     </div> 
+
+</div>
+<router-outlet></router-outlet>
