@@ -12,13 +12,20 @@
     align-items: center;
     justify-content: start;
     column-gap: 20px;
+
+    &:first-child{
+        flex-shrink: 1;
+    }
 }
 
 .profile-card__img{
     width: 70px;
+    // height: 70px;
     aspect-ratio: auto 1 / 1;
+    // aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 1;
 }
 
 .profile-card__name{

@@ -1,0 +1,22 @@
+<div class="el-wrapper">
+<form class="login-form" 
+[formGroup]="form"
+(ngSubmit)="onSubmint()">
+    <h1 class="h1">Вход</h1>
+    <label>
+        <span class="label">Telegram username</span>
+        <input type="text" placeholder="Введите логин"
+        formControlName="username">
+    </label>
+    <label class="label">
+        <span>Пароль</span>
+        <input type="password" placeholder="Введите пароль"
+        formControlName="password">
+    </label>
+    <button class="login-btn btn" type="submit">Войти</button>
+</form>
+</div>
+<div class="el-wrapper">
+<img src="assets/imgs/Content.svg" alt="logo">
+</div>
+<button (click)="gf()">fjjh</button>
