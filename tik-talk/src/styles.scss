@@ -6,6 +6,7 @@
     --dark-color: #000;
     --light-color: #fff;
     --primary-color: #AE7AFF;
+    --dark-hover-color: #161616
 }
 
 *,
@@ -21,6 +22,16 @@ body{
     font-weight: 500;
     background-color: var(--dark-color);
     color: var(--light-color);
+    background-image: url(./assets/imgs/ImgBg.png);
+    background-repeat: no-repeat;
+    // background-size: 100% 100%;
+    background-size: cover;
+}
+
+h1{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
 }
 
 h6{
@@ -45,6 +56,7 @@ h6{
 }
 
 .btn{
+    font-family: 'JetBrains Mono';
     border: 1px solid var(--dark-color);
     border-radius: 2px;
     background-color: var(--primary-color);
