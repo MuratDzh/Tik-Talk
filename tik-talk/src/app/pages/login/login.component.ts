@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
-import {  Router } from '@angular/router';
-import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,27 +14,28 @@ import { tap } from 'rxjs';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService, private router: Router){}
+  isPasswordVosible=signal(false)
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   form: FormGroup = new FormGroup({
     username: new FormControl('MuratDzh', Validators.required),
     password: new FormControl('oyg2fWZm6x', Validators.required),
   });
 
-  
-
   onSubmint() {
-    
     if (this.form.valid) {
-      
       //@ts-ignore
-      this.authService.login(this.form.value).subscribe(v=>this.router.navigate(['']));
-      
+      this.authService
+        .login(this.form.value)
+        .subscribe((v) => this.router.navigate(['']));
     }
     // this.form.reset();
   }
 
-  gf(){
-    this.router.navigate([''])
+  onVisible(){
+    this.isPasswordVosible.set(!this.isPasswordVosible())
   }
+
+ 
 }

@@ -1,1 +1,44 @@
-<p>sidebar works!</p>
+
+<img class="sidebar-logo" src="../../../assets/imgs/Logo-Tik-Talk.png" alt="logo">
+<nav>
+    <ul class="main-menu-list">
+        @for (i of menu; track $index) {
+            <li class="main-menu-item">
+                <button type="button" class="main-menu-item__btn btn " [routerLink]="['i.link']" routerLinkActive="active">
+                    <svg [icon]='i.icon' class="menu-item__icon"></svg>
+                    <span>{{i.label}}</span> 
+                </button>
+            </li>
+        }
+    </ul>
+</nav>
+<p class="medium-text">
+    Подписчики
+</p>
+@for (profile of (subscribers$|async); track profile.id) {
+<app-subscriber-card [profile]='profile'></app-subscriber-card>
+
+}
+<div class="to-subscribers">
+    <a [routerLink]="['/subscribers']" class="to-subscribers__link">
+        Все подписчики
+    </a>
+    <svg class="to-subscribers__icon" icon="arr"></svg>
+</div>
+<footer class="footer">
+    @if(me(); as me){
+        @if(!me===null){
+            <img width="32" height="32" loading="lazy" [src]='me.avatarUrl|imgUrl' [alt]='me.lastName'>
+        } @else {
+            <img width="32" height="32" loading="lazy" src="../../../assets/imgs/Content.png" [alt]='me.lastName'>
+        }
+        <span>{{me.username }}</span>
+        <button class="setings__btn" (click)="toSetings()" type="button">
+            <svg class="setings__svg" icon="setings"></svg>
+        </button>
+    }
+</footer>
+    
+
+
+               
