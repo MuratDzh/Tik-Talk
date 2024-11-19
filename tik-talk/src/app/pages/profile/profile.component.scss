@@ -1,0 +1,127 @@
+:host{
+    height: 100dvh;
+    
+   
+}
+
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-svg{
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+}
+
+.btn-setings{
+    width: 340px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    
+}
+
+.setings{
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 24px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--primary-color-hover);
+    }
+}
+
+.profile-page__body{
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    column-gap: 64px;
+    padding-block: 24px;
+}
+
+.profile-page__me{
+
+    & .list{
+        padding-inline: 24px;
+        display: flex;
+        color: var(--light-color);
+        // flex-direction: row;
+        column-gap: 6px;
+        margin-bottom: 32px;
+    }
+   
+    & ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        column-gap: 6px;
+
+    }
+
+    & img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+
+}
+
+.profile-page__title{
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24px; 
+    margin-bottom: 16px;
+    padding-inline: 24px;
+}
+
+.svg-btn{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background:none;
+    color: var(--light-color);
+    background-color: var(--light-color);
+    position: absolute;
+}
+
+.svg-wrapper{
+    width: 36px;
+    height: 36px;
+    position: relative;
+    
+    color: var(--light-color);
+    // background-color: var(--light-color);
+}
+
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding-inline: 24px;
+    margin-bottom: 32px;
+}
+
+.skill{
+    padding: 4px 8px;
+    border: 1px solid var(--light-color);
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.profile-page__description{
+    padding-inline: 24px;
+}

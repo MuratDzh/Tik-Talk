@@ -1,4 +1,12 @@
 :host{
+    width: 1440px;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 300px 1fr;
+    min-height: 100svh;
+   
+}
+
+.container{
+    padding: 24px;
 }

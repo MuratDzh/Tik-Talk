@@ -1,0 +1,7 @@
+<img height="140" [src]='preview()' alt="My photo" class="avatar">
+<div class="dropzone-wrapper" (keyup.enter)="upload.click()">
+    <svg icon='upload' class="svg-upload" tabindex="0"></svg>
+    <span>Перетащите изображение или загрузите</span>
+    <input type="file" class="hidden" #upload tabindex="-1"
+    (change)="fileBrowserHandler($event)">
+</div>

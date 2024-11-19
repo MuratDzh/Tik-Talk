@@ -1,1 +1,45 @@
-<p>profile works!</p>
+@if(profile$|async; as profile){
+<div class="profile-header">
+    <app-profile-header [profile$]='profile$'></app-profile-header>
+    @if (profile.id===575924103) {
+    <div class="btn-setings">
+        <button class="bnt-large btn setings" (click)="toSettings()">
+            <span> Редактировать </span>
+            <svg icon="setings" class="btn-svg"></svg>
+        </button>
+    </div>
+    }
+</div>
+<main class="profile-page__body">
+    <div></div>
+    <div class="profile-page__me">
+        <h4 class="profile-page__title">Подписчики</h4>
+        <div class="list">
+            <ul>
+                @for (i of (subscribers$|async); track i.id) {
+                    <li>
+                        <a [routerLink]="['/profile', i.id]">
+                            <img width="36" height="36" loading="lazy" [src]='i.avatarUrl|imgUrl'>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <div class="svg-wrapper"> 
+                <div class="svg-btn"></div>
+            </div>
+            
+        </div>
+        <h4 class="profile-page__title"> Навыки</h4>
+             <div class="skills">
+             
+                @for (i of profile.stack; track i) {
+                <span class="skill" >{{i}}</span>
+                
+                }
+             </div>
+        <h4 class="profile-page__title"> О себе</h4>
+        <p class="profile-page__description">{{profile.description}}</p>
+        
+    </div>
+</main>
+}

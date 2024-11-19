@@ -6,7 +6,9 @@
     --dark-color: #000;
     --light-color: #fff;
     --primary-color: #AE7AFF;
-    --dark-hover-color: #161616
+    --primary-color-hover: rgb(174, 122, 255, 0.75);
+    --dark-hover-color: #161616;
+    --light-grey-color: rgba(255, 255, 255, 0.75);
 }
 
 *,
@@ -28,6 +30,10 @@ body{
     background-size: cover;
 }
 
+.hidden{
+    display: none;
+}
+
 h1{
     font-size: 48px;
     font-weight: 800;
@@ -41,7 +47,7 @@ h6{
 }
 
 .container-wrapper{
-    width: 1092px;
+    width: 1440px;
     margin-inline: auto;
 }
 
@@ -70,4 +76,39 @@ h6{
 .btn-large{
     padding-inline: 20px;
 
+}
+
+.tt-form-label{
+    display: flex;
+    flex-direction: column;
+    color: var(--light-grey-color);
+    gap: 4px;
+
+    
+}
+
+
+.tt-form-input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--light-color);
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--light-color);
+}
+
+.tt-form-label__text{
+    height: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.tt-text-area{
+   resize: none; 
+   height: 80px;
+   
 }

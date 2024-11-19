@@ -1,0 +1,35 @@
+:host{
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    column-gap: 24px;
+    height: 144px;
+    
+    // width: 380px;
+   
+    margin-bottom: 32px;
+    padding-left: 24px;
+    align-items: center;
+}
+
+
+.user-full-name {
+
+    display: flex;
+    flex-direction: column;
+
+}
+.firstname-lastname {
+    margin-bottom: 4px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+}
+.username {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+img{
+    border-radius: 50%;
+}
