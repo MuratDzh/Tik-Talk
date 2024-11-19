@@ -1,0 +1,32 @@
+<app-profile-header></app-profile-header>
+<div class="profile-form__wrapper">
+    <form class="profile-form__" [formGroup]="form" >
+        <div class="two-columns tt-form-label">
+            <label class="tt-form-label">
+                <span class="tt-form-label__text">Имя</span>
+                <input type="text" class="tt-form-input" placeholder="Введите данные" formControlName="firstName">
+            </label>
+            <label class="tt-form-label">
+                <span class="tt-form-label__text">Фамилия</span>
+                <input type="text" class="tt-form-input" placeholder="Введите данные" formControlName="lastName">
+            </label>
+        </div>
+        <label class="tt-form-label">
+            <span class="tt-form-label__text">Telegram username</span>
+            <input type="text" class="tt-form-input" placeholder="Введите данные" formControlName="username">
+        </label>
+        <label class="tt-form-label">
+            <span class="tt-form-label__text">Аватарка</span>
+            <app-avatar-upload></app-avatar-upload>
+        </label>
+        <label class="tt-form-label " >
+            <span class="tt-form-label__text">О себе</span>
+            <textarea class="tt-form-input tt-text-area" rows="4" formControlName="description"></textarea>
+        </label>
+        <label class="tt-form-label">
+            <span class="tt-form-label__text">Навыки</span>
+            <input type="text" class="tt-form-input" placeholder="Введите данные" formControlName="stack">
+        </label>
+    </form>
+    <button class="btn tt-btn" (click)="onSave()" [disabled]="form.invalid">Сохранить</button>
+</div>

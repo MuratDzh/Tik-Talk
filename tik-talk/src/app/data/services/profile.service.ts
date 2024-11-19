@@ -10,7 +10,11 @@ import { Pagenable } from '../interfaces/subscriber.interface';
   providedIn: 'root',
 })
 export class ProfileService {
-  constructor(private http: HttpClient, private coockie: CookieService, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private coockie: CookieService,
+    private router: Router
+  ) {}
 
   getTestAccount(): Observable<Profile[]> {
     return this.http.get<Profile[]>(
@@ -18,14 +22,30 @@ export class ProfileService {
     );
   }
 
-  getMe(): Observable<Profile>{
-    return this.http.get<Profile>('https://icherniakov.ru/yt-course/account/me')
+  getMe(): Observable<Profile> {
+    return this.http.get<Profile>(
+      'https://icherniakov.ru/yt-course/account/me'
+    );
   }
 
-  getSubscribers():any{
-    return this.http.get<Partial<Pagenable<Profile[]>>>('https://icherniakov.ru/yt-course/account/subscribers/')
-    .pipe(map(res=>res.items?.slice(0, 3)))  }
+  getSubscribers(a = 3): any {
+    return this.http
+      .get<Partial<Pagenable<Profile[]>>>(
+        'https://icherniakov.ru/yt-course/account/subscribers/'
+      )
+      .pipe(map((res) => res.items?.slice(0, a)));
+  }
 
-  
- 
+  getTestAccountId(id: string): Observable<Profile> {
+    return this.http.get<Profile>(
+      `https://icherniakov.ru/yt-course/account/${id}`
+    );
+  }
+
+  postMe(me: Partial<Profile>) {
+    return this.http.patch<Partial<Profile>>(
+      'https://icherniakov.ru/yt-course/account/me',
+      me
+    );
+  }
 }

@@ -1,0 +1,45 @@
+:host{
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    column-gap: 64px;
+}
+
+app-profile-header{
+    border-bottom: 1px dotted var(--light-color);
+}
+
+.profile-form__wrapper {
+    border: 1px solid var(--light-color);
+    border-radius: 2px;
+    padding: 32px;
+    background-color: var(--dark-color);
+    height: calc(100svh - (24px * 4));
+    position: relative;
+}
+
+.profile-form__ {
+    display: grid;
+    gap: 20px;
+}
+
+.two-columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.tt-btn{
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+
+    &:disabled{
+        background-color: var(--dark-hover-color);
+        color: var(--light-grey-color);
+    }
+}

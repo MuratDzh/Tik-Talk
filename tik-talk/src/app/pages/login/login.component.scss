@@ -1,10 +1,20 @@
 :host{
     height: 100svh;
-  display: grid;
-//   column-gap: 232px;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-wrapper{
+    width: 1112px;
+   
+    display: grid;
+      column-gap: 232px;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      align-items: center;
 }
 
 .el-wrapper{

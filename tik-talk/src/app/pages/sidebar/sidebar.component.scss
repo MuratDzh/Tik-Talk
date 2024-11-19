@@ -2,11 +2,13 @@
     padding: 20px 12px;
     background-color: var(--dark-color);
     position: relative;
+    height: 100%;
 }
 
 .sidebar-logo{
     margin-left: 16px;
     margin-bottom: 20px;
+    height: 74px;
 }
 
 
@@ -36,10 +38,11 @@
     border: none;
     text-align: start;
     cursor: pointer;
+    text-decoration: none;
 
     
-
-   &:hover,
+    &:active,
+    &:hover,
     &:focus-visible{
         background-color: var(--dark-hover-color);
         color: var(--primary-color);
@@ -110,10 +113,10 @@
     padding: 4px 16px;
     background-color: var(--dark-hover-color);
     height: 40px;
-    width: calc(100% - 24px);
+    width: 276px;
     align-items: center;
     column-gap: 12px;
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     border-radius: 2px;
     

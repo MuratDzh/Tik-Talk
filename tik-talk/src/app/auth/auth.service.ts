@@ -59,9 +59,9 @@ export class AuthService {
      {refresh_token:this.cookie.get('refreshToken')})
      .pipe(
       tap(v=>{
+
         this.cookie.set('token', v.access_token)
         this.cookie.set('refreshToken', v.refresh_token)
-        console.log(this.cookie.get('token'))
         
       }),
       catchError(err=>{

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { Observable, firstValueFrom, tap } from 'rxjs';
@@ -11,7 +11,7 @@ import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SvgIconComponent, RouterLink, SubscriberCardComponent, AsyncPipe, CommonModule, ImgUrlPipe],
+  imports: [SvgIconComponent, RouterLink, SubscriberCardComponent, AsyncPipe, CommonModule, ImgUrlPipe, RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   providers: [Router, CommonModule]
@@ -22,7 +22,7 @@ export class SidebarComponent {
   me=signal <Profile|null>(null)
   
   menu=[
-    {label:"Моя страница", icon:"home", link: ''},
+    {label:"Моя страница", icon:"home", link: 'profile/me'},
     {label:"Чаты", icon:"chat", link: '/chat'},
     {label:"Поиск", icon:"search", link:'/search'}
   ]
@@ -41,6 +41,10 @@ export class SidebarComponent {
   }
 
   toSetings(){
-    this.router.navigate(['/setings'])
+    this.router.navigate(['settings'])
+  }
+
+  onLink(link:string){
+    this.router.navigate([link])
   }
 }

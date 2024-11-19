@@ -1,0 +1,13 @@
+@if(profile$|async; as profile){
+    
+        @if(profile.avatarUrl){
+            <img width="112" height="112" loading="lazy" [src]='profile.avatarUrl|imgUrl' [alt]='profile.lastName'>
+        } @else {
+            <img width="112" height="112"  src="../../../assets/imgs/Content.png" >
+        }
+        <div class="user-full-name">
+            <strong class="firstname-lastname">{{profile.firstName }}  {{profile.lastName}}</strong>
+            <span class="username">{{profile.username}}</span>
+        </div>
+    
+}
